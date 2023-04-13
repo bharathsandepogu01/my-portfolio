@@ -1,25 +1,23 @@
-@import 'variables';
-
-.darkTheme {
+.lightTheme {
     // configure all color variants here for dark theme
-    --primary-color: $lt-primary-color;
-    --primary-hover-color: $lt-primary-hover-color;
-    --background-color: $lt-background-color;
-    --background-color-dark: $lt-background-color-dark;
-    --border-color: $lt-border-color;
-    --text-primary-color: $lt-text-primary-color;
-    --text-secondary-color: $lt-text-secondary-color;
+    --primary-color: #2fbf71;
+    --primary-hover-color: #228750;
+    --background-color: #ffffff;
+    --background-color-dark: #f7f7ff;
+    --border-color: #0b0b134d;
+    --text-primary-color: #0b0b13;
+    --text-secondary-color: #555555;
 }
 
-.lightTheme {
+.darkTheme {
     // configure all color variants here for light theme
-    --primary-color: $dt-primary-color;
-    --primary-hover-color: $dt-primary-hover-color;
-    --background-color: $dt-background-color;
-    --background-color-dark: $dt-background-color-dark;
-    --border-color: $dt-border-color;
-    --text-primary-color: $dt-text-primary-color;
-    --text-secondary-color: $dt-text-secondary-color;
+    --primary-color: #2fbf71;
+    --primary-hover-color: #228750;
+    --background-color: #10101a;
+    --background-color-dark: #000000;
+    --border-color: #ffffff4d;
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #ffffffcc;
 }
 
 .appLayoutContainer {
