@@ -1,0 +1,44 @@
+// declare variables for common css properties
+
+// typography
+
+$font-size: 1rem;
+$line-height: 1.25;
+
+$body-max-width: 1600px;
+
+// spacing 
+$margin-4: 0.25rem;
+$margin-8: 0.5rem;
+$margin-12: 0.75rem;
+$margin-16: 1rem;
+$margin-20: 1.25rem;
+$margin-24: 1.5rem;
+$margin-28: 1.75rem;
+$margin-32: 2rem;
+
+$padding-4: 0.25rem;
+$padding-8: 0.5rem;
+$padding-12: 0.75rem;
+$padding-16: 1rem;
+$padding-20: 1.25rem;
+$padding-24: 1.5rem;
+$padding-28: 1.75rem;
+$padding-32: 2rem;
+
+//colors
+$lt-primary-color: #2fbf71;
+$lt-primary-hover-color: #228750;
+$lt-background-color: #10101a;
+$lt-background-color-dark: #000000;
+$lt-border-color: #ffffff4d;
+$lt-text-primary-color: #ffffff;
+$lt-text-secondary-color: #ffffffcc;
+
+$dt-primary-color: #2fbf71;
+$dt-primary-hover-color: #228750;
+$dt-background-color: #ffffff;
+$dt-background-color-dark: #f7f7ff;
+$dt-border-color: #0b0b134d;
+$dt-text-primary-color: #0b0b13;
+$dt-text-secondary-color: #555555;
