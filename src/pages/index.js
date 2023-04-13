@@ -1,7 +1,5 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Head from 'next/head';
+import AppLayout from '@components/AppLayout';
 
 export default function Home() {
   return (
@@ -11,9 +9,7 @@ export default function Home() {
         <meta name="description" content="Bharath sandepogu's Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main>
-        <h1>{`Bharath Sandepogu's Portfolio`}</h1>
-      </main>
+      <AppLayout />
     </>
   );
 }

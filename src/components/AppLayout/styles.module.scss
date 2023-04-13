@@ -1,0 +1,29 @@
+@import 'variables';
+
+.darkTheme {
+    // configure all color variants here for dark theme
+    --primary-color: $lt-primary-color;
+    --primary-hover-color: $lt-primary-hover-color;
+    --background-color: $lt-background-color;
+    --background-color-dark: $lt-background-color-dark;
+    --border-color: $lt-border-color;
+    --text-primary-color: $lt-text-primary-color;
+    --text-secondary-color: $lt-text-secondary-color;
+}
+
+.lightTheme {
+    // configure all color variants here for light theme
+    --primary-color: $dt-primary-color;
+    --primary-hover-color: $dt-primary-hover-color;
+    --background-color: $dt-background-color;
+    --background-color-dark: $dt-background-color-dark;
+    --border-color: $dt-border-color;
+    --text-primary-color: $dt-text-primary-color;
+    --text-secondary-color: $dt-text-secondary-color;
+}
+
+.appLayoutContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
