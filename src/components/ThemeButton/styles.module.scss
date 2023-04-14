@@ -1,0 +1,36 @@
+@import 'mixins';
+
+.themeButtonContainer {
+    @include circle(5.6rem);
+    border: 2px solid var(--text-primary-color);
+    background-color: var(--background-color);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.iconContainer {
+    @include circle(50%);
+    @include centerAbsoluteElement();
+    transition: transform 0.6s ease, opacity 1.2s ease;
+    opacity: 0;
+}
+
+.darkThemeContainer {
+    @extend .iconContainer;
+    transform: translate(200%, 0);
+}
+
+.lightThemeContainer {
+    @extend .iconContainer;
+    transform: translate(-200%, 0);
+}
+
+.showThemeIconContainer {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.themeIcon {
+    @include icon(var(--text-primary-color));
+}

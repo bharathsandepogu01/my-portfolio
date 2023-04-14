@@ -1,1 +1,6 @@
-.headerContainer {}
+.headerContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 4rem 8rem;
+}
