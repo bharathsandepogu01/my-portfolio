@@ -6,13 +6,25 @@
     overflow: hidden;
 }
 
-.border {
+.bordersContainer {
+    @include centerAbsoluteElement();
+    height: 100%;
+    width: 100%;
+    transform: rotate(0deg);
+    transition: transform 2s ease;
+}
+
+.borderOne {
     @include centerAbsoluteElement();
     height: 150%;
     width: 50%;
     background-color: var(--primary-color);
-    transform: rotate(135deg);
-    transition: transform 2s ease;
+    transform: rotate(0deg);
+}
+
+.borderTwo {
+    @extend .borderOne;
+    transform: rotate(90deg);
 }
 
 .contentContainer {
@@ -28,9 +40,9 @@
 }
 
 .rotateBorder {
-    transform: rotate(-225deg);
+    transform: rotate(360deg);
 }
 
 .rotateBorderReverse {
-    transform: rotate(135deg);
+    transform: rotate(0deg);
 }

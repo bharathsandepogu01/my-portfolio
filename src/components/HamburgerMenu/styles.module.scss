@@ -1,0 +1,175 @@
+@import 'mixins';
+@import 'variables';
+
+.menuContainer {
+    height: 5.6rem;
+    width: auto;
+    border-radius: 1000px;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    padding-left: 4.8rem;
+
+    @media (max-width: $tab-screen-max-width) {
+        gap: 1.6rem;
+        padding-left: 3.2rem;
+    }
+
+    @media (max-width: $menu-mobile-max-width) {
+        width: 5.6rem;
+        padding-left: unset;
+    }
+}
+
+.linksContainer {
+    list-style: none;
+    visibility: hidden;
+
+    &>li {
+        visibility: hidden;
+    }
+
+    // mobile screen menu
+
+    @media (max-width: $menu-mobile-max-width) {
+        position: fixed;
+        // TODO need to change this approach, calculating navbar height and adding here in top
+        top: 7.6rem;
+        left: 0;
+        width: 100vw;
+        height: 0px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color-dark);
+        transition: height 0.3s ease;
+
+
+        &>li {
+            width: 100%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 2.8rem;
+            padding-bottom: 2.8rem;
+            border-top: 0.5px solid var(--border-color);
+        }
+    }
+
+    // tab and desktop screen menu
+
+    @media (min-width: $menu-mobile-max-width) {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 4.8rem;
+        z-index: 2;
+
+        &>li {
+            transform: translate(0, 100%);
+        }
+    }
+
+    @media (min-width: $menu-mobile-max-width) and (max-width: $tab-screen-max-width) {
+        gap: 3.2rem;
+    }
+
+}
+
+.displayLinks {
+
+    // mobile screen menu
+    @media (max-width: $menu-mobile-max-width) {
+        height: calc(100vh - 7.6rem);
+        overflow-y: auto;
+
+        visibility: visible;
+
+        &>li {
+            visibility: visible;
+        }
+    }
+
+
+    // tab and desktop screen menu
+    @media (min-width: $menu-mobile-max-width) {
+        visibility: visible;
+
+        @for $i from 1 through 5 {
+            $delay: (6 - $i) * 0.06s;
+
+            &>li:nth-child(#{$i}) {
+                transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
+                transform: translate(0, 0);
+                visibility: visible
+            }
+        }
+    }
+}
+
+.commonHorizontalBar {
+    @include centerAbsoluteElement();
+    height: 0.3rem;
+    background-color: var(--text-primary-color);
+    transition: transform 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger {
+    @include circle(5.6rem);
+    border: none;
+    background-color: unset;
+    padding: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+
+    &>span {
+        @extend .commonHorizontalBar;
+        width: 40%;
+    }
+
+    &>span::before {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-bottom: 0.8rem;
+    }
+
+    &>span::after {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+}
+
+.hamBurgerActive {
+    &>span {
+        background-color: transparent;
+    }
+
+    &>span::before {
+        transform: rotate(45deg);
+        margin-bottom: unset;
+    }
+
+    &>span::after {
+        transform: rotate(-45deg);
+        margin-top: unset;
+    }
+}
+
+.expandableBackground {
+    position: absolute;
+    right: 0;
+    height: 5.6rem;
+    width: 5.6rem;
+    border-radius: 1000px;
+    background-color: var(--background-color-dark);
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+.expandBackground {
+    width: 100%;
+}

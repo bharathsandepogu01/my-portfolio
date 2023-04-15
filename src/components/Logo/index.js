@@ -19,7 +19,10 @@ function Logo() {
       className={classes.logoContainer}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}>
-      <div className={classes.border} ref={borderRef}></div>
+      <div className={classes.bordersContainer} ref={borderRef}>
+        <div className={classes.borderOne}></div>
+        <div className={classes.borderTwo}></div>
+      </div>
       <div className={classes.contentContainer}>BS</div>
     </div>
   );

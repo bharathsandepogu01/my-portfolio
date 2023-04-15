@@ -1,6 +1,16 @@
+@import 'variables';
+
 .headerContainer {
     display: flex;
     align-items: center;
     gap: 1.6rem;
     padding: 4rem 8rem;
+
+    @media (max-width: $tab-screen-max-width) {
+        padding: 2rem 4rem;
+    }
+
+    @media (max-width: $menu-mobile-max-width) {
+        padding: 1.2rem 2rem;
+    }
 }
