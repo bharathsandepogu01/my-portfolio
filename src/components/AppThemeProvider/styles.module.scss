@@ -1,0 +1,21 @@
+.lightTheme {
+    // configure all color variants here for dark theme
+    --primary-color: #2fbf71;
+    --primary-hover-color: #228750;
+    --background-color: #ffffff;
+    --background-color-dark: #f7f7f7;
+    --border-color: #0b0b134d;
+    --text-primary-color: #0b0b13;
+    --text-secondary-color: #555555;
+}
+
+.darkTheme {
+    // configure all color variants here for light theme
+    --primary-color: #2fbf71;
+    --primary-hover-color: #228750;
+    --background-color: #1f2028;
+    --background-color-dark: #000000;
+    --border-color: #ffffff4d;
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #ffffffcc;
+}

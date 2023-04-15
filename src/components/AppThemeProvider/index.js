@@ -2,14 +2,15 @@ import React, {createContext, useEffect, useMemo, useState} from 'react';
 import {DARK_THEME, LIGHT_THEME} from '@constants/appTheme';
 import {getLocalStorage} from '@utils/localStorage';
 import {USER_APP_THEME_PREFERENCE} from '@constants/localStorage';
+import classes from './styles.module.scss';
 
 export const AppThemeContext = createContext({
-  appTheme: DARK_THEME,
+  appTheme: LIGHT_THEME,
   setAppTheme: () => {},
 });
 
 function AppThemeProvider(props) {
-  const [appTheme, setAppTheme] = useState(DARK_THEME);
+  const [appTheme, setAppTheme] = useState(LIGHT_THEME);
 
   useEffect(() => {
     const userPreferredTheme = getLocalStorage(USER_APP_THEME_PREFERENCE);
@@ -18,6 +19,17 @@ function AppThemeProvider(props) {
       setAppTheme(userPreferredTheme);
     }
   }, []);
+
+  useEffect(() => {
+    if (appTheme === DARK_THEME) {
+      document.body.classList.remove(classes.lightTheme);
+      document.body.classList.add(classes.darkTheme);
+      return;
+    }
+    document.body.classList.remove(classes.darkTheme);
+    document.body.classList.add(classes.lightTheme);
+    return;
+  }, [appTheme]);
 
   const value = useMemo(
     () => ({
