@@ -22,12 +22,12 @@ function AppThemeProvider(props) {
 
   useEffect(() => {
     if (appTheme === DARK_THEME) {
-      document.body.classList.remove(classes.lightTheme);
-      document.body.classList.add(classes.darkTheme);
+      document.documentElement.classList.remove(classes.lightTheme);
+      document.documentElement.classList.add(classes.darkTheme);
       return;
     }
-    document.body.classList.remove(classes.darkTheme);
-    document.body.classList.add(classes.lightTheme);
+    document.documentElement.classList.remove(classes.darkTheme);
+    document.documentElement.classList.add(classes.lightTheme);
     return;
   }, [appTheme]);
 
