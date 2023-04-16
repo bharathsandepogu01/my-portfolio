@@ -16,11 +16,6 @@
         gap: 1.6rem;
         padding-left: 3.2rem;
     }
-
-    @media (max-width: $menu-mobile-max-width) {
-        width: 5.6rem;
-        padding-left: unset;
-    }
 }
 
 .linksContainer {
@@ -29,87 +24,40 @@
 
     &>li {
         visibility: hidden;
+        transform: translate(0, 100%);
     }
 
-    // mobile screen menu
-
-    @media (max-width: $menu-mobile-max-width) {
-        position: fixed;
-        // TODO need to change this approach, calculating navbar height and adding here in top
-        top: 7.6rem;
-        left: 0;
-        width: 100vw;
-        height: 0px;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--background-color-dark);
-        transition: height 0.3s ease;
-
-
-        &>li {
-            width: 100%;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-top: 2.8rem;
-            padding-bottom: 2.8rem;
-            border-top: 0.5px solid var(--border-color);
-        }
+    @media (max-width: $mobile-menu-max-width) {
+        display: none;
     }
-
-    // tab and desktop screen menu
-
-    @media (min-width: $menu-mobile-max-width) {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 4.8rem;
-        z-index: 2;
-
-        &>li {
-            transform: translate(0, 100%);
-        }
-    }
-
-    @media (min-width: $menu-mobile-max-width) and (max-width: $tab-screen-max-width) {
-        gap: 3.2rem;
-    }
-
 }
 
 .displayLinks {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4.8rem;
+    z-index: 2;
 
-    // mobile screen menu
-    @media (max-width: $menu-mobile-max-width) {
-        height: calc(100vh - 7.6rem);
-        overflow-y: auto;
-
-        visibility: visible;
-
-        &>li {
-            visibility: visible;
-        }
+    @media (max-width: $tab-screen-max-width) {
+        gap: 3.2rem;
     }
 
+    @for $i from 1 through 5 {
+        $delay: (6 - $i) * 0.06s;
 
-    // tab and desktop screen menu
-    @media (min-width: $menu-mobile-max-width) {
-        visibility: visible;
-
-        @for $i from 1 through 5 {
-            $delay: (6 - $i) * 0.06s;
-
-            &>li:nth-child(#{$i}) {
-                transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
-                transform: translate(0, 0);
-                visibility: visible
-            }
+        &>li:nth-child(#{$i}) {
+            transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
+            transform: translate(0, 0);
+            visibility: visible
         }
     }
 }
 
 .commonHorizontalBar {
     @include centerAbsoluteElement();
-    height: 0.3rem;
+    height: 3px;
     background-color: var(--text-primary-color);
     transition: transform 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
 }
@@ -172,4 +120,70 @@
 
 .expandBackground {
     width: 100%;
+}
+
+.mobileMenuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1.2rem 2rem;
+    background-color: var(--background-color);
+}
+
+
+.cancelIcon {
+    cursor: pointer;
+    @include circle(5.6rem);
+    border: none;
+    margin-left: auto;
+    position: relative;
+    background-color: var(--background-color-dark);
+
+    &>span {
+        @extend .commonHorizontalBar;
+        width: 40%;
+        background-color: transparent;
+    }
+
+    &>span::before {
+        content: "";
+        @extend .commonHorizontalBar;
+        transform: rotate(45deg);
+        margin-bottom: 0.8;
+    }
+
+    &>span::after {
+        content: "";
+        @extend .commonHorizontalBar;
+        transform: rotate(-45deg);
+        margin-top: 0.8;
+    }
+}
+
+.mobileLinksContainer {
+    list-style: none;
+    width: 100%;
+    visibility: hidden;
+
+    &>li {
+        visibility: hidden;
+        width: 100%;
+        padding: 2.4rem;
+        transform: translate(-100%, 0);
+    }
+}
+
+.displayMobileLinks {
+    visibility: visible;
+
+    @for $i from 1 through 5 {
+        $delay: $i * 0.12s;
+
+        &>li:nth-child(#{$i}) {
+            transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
+            transform: translate(0, 0);
+            visibility: visible
+        }
+    }
 }

@@ -4,13 +4,22 @@
     display: flex;
     align-items: center;
     gap: 1.6rem;
-    padding: 4rem 8rem;
+    padding: 2rem 8rem;
+    transform: translate(0, 0);
+    transition: transform 0.2s ease-in-out 0.1s;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
 
     @media (max-width: $tab-screen-max-width) {
         padding: 2rem 4rem;
     }
 
-    @media (max-width: $menu-mobile-max-width) {
+    @media (max-width: $mobile-menu-max-width) {
         padding: 1.2rem 2rem;
     }
+}
+
+.hideHeaderContainer {
+    transform: translate(0, -100%);
 }
