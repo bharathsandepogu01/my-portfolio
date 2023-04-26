@@ -10,12 +10,13 @@
     position: sticky;
     top: 0;
     background-color: var(--background-color);
+    z-index: 1;
 
-    @media (max-width: $tab-screen-max-width) {
+    @media screen and (max-width: $tab-screen-max-width) {
         padding: 2rem 4rem;
     }
 
-    @media (max-width: $mobile-menu-max-width) {
+    @media screen and (max-width: $mobile-menu-max-width) {
         padding: 1.2rem 2rem;
     }
 }

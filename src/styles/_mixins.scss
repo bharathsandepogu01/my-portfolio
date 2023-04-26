@@ -19,3 +19,16 @@
     right: 0;
     margin: auto;
 }
+
+@mixin section() {
+    padding: 6rem 12rem;
+    background-color: var(--background-color);
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: 3.2rem 6.4rem;
+    }
+
+    @media screen and (max-width: $mobile-screen-max-width) {
+        padding: 1.6rem 3.2rem;
+    }
+}
