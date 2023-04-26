@@ -9,7 +9,6 @@ export default function Home() {
         <title>Bharath Sandepogu</title>
         <meta name="description" content="Bharath sandepogu's Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/app-favicon.ico" />
       </Head>
       <AppThemeProvider>
         <AppLayout />

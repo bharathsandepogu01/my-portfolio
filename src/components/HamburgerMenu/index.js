@@ -1,8 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
+import dynamic from 'next/dynamic';
 
 import classes from './styles.module.scss';
 import useWindowSize from '@hooks/useWindowSize';
-import Modal from '@components/Modal';
+import AppText from '@components/AppText';
+
+const Modal = dynamic(() => import('@components/Modal'), {ssr: false});
 
 function HamBurgerMenu() {
   const [expandMenu, setExpandMenu] = useState(false);
@@ -28,13 +31,19 @@ function HamBurgerMenu() {
       hamburgerRef.current.classList.remove(classes.hamBurgerActive);
       linkContainerRef.current.classList.remove(classes.displayLinks);
       backgroundRef.current.classList.remove(classes.expandBackground);
-      if (!expandMenu) {
-        mobileMenuLinks.current.classList.remove(classes.displayMobileLinks);
-      } else {
-        mobileMenuLinks.current.classList.add(classes.displayMobileLinks);
-      }
     }
   }, [expandMenu, isMobileMenuScreen]);
+
+  const onOpenModal = () => {
+    if (!mobileMenuLinks.current) return;
+    mobileMenuLinks.current.classList.remove(classes.displayLinks);
+    mobileMenuLinks.current.classList.add(classes.displayMobileLinks);
+  };
+
+  const onCloseModal = () => {
+    if (!mobileMenuLinks.current) return;
+    mobileMenuLinks.current.classList.remove(classes.displayMobileLinks);
+  };
 
   const handleOnClickMenu = () => {
     setExpandMenu(!expandMenu);
@@ -47,19 +56,39 @@ function HamBurgerMenu() {
         ref={linkContainerRef}
         aria-label={'links'}>
         <li>
-          <a href="#">Home</a>
+          <a href="#">
+            <AppText variant="span" small secondaryText>
+              Home
+            </AppText>
+          </a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#">
+            <AppText variant="span" small secondaryText>
+              About
+            </AppText>
+          </a>
         </li>
         <li>
-          <a href="#">Experience</a>
+          <a href="#">
+            <AppText variant="span" small secondaryText>
+              Experience
+            </AppText>
+          </a>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <a href="#">
+            <AppText variant="span" small secondaryText>
+              Projects
+            </AppText>
+          </a>
         </li>
         <li>
-          <a href="#">Blogs</a>
+          <a href="#">
+            <AppText variant="span" small secondaryText>
+              Blogs
+            </AppText>
+          </a>
         </li>
       </ul>
       <button
@@ -74,7 +103,10 @@ function HamBurgerMenu() {
         ref={backgroundRef}
         aria-hidden
       />
-      <Modal showModal={expandMenu && isMobileMenuScreen}>
+      <Modal
+        showModal={expandMenu && isMobileMenuScreen}
+        onCloseModal={onCloseModal}
+        onOpenModal={onOpenModal}>
         <nav className={classes.mobileMenuContainer}>
           <button
             className={classes.cancelIcon}
@@ -87,19 +119,39 @@ function HamBurgerMenu() {
             aria-label={'links'}
             ref={mobileMenuLinks}>
             <li>
-              <a href="#">Home</a>
+              <a href="#">
+                <AppText variant="span" small secondaryText>
+                  Home
+                </AppText>
+              </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#headerSection">
+                <AppText variant="span" small secondaryText>
+                  About
+                </AppText>
+              </a>
             </li>
             <li>
-              <a href="#">Experience</a>
+              <a href="#testSection">
+                <AppText variant="span" small secondaryText>
+                  Experience
+                </AppText>
+              </a>
             </li>
             <li>
-              <a href="#">Projects</a>
+              <a href="#">
+                <AppText variant="span" small secondaryText>
+                  Projects
+                </AppText>
+              </a>
             </li>
             <li>
-              <a href="#">Blogs</a>
+              <a href="#">
+                <AppText variant="span" small secondaryText>
+                  Blogs
+                </AppText>
+              </a>
             </li>
           </ul>
         </nav>
