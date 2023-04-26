@@ -4,13 +4,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow: auto;
     background-color: var(--background-color-dark);
     transform: translate(0, -100%);
     transition: transform 0.3s ease;
+    z-index: 999;
 }
 
 .modalContainerActive {
