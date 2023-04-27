@@ -77,21 +77,24 @@ function ExperienceSection() {
 
       const obsCallBack = function (entries, observer) {
         const [entry] = entries;
-        if (entry.isIntersecting) {
-          timeLineIconRef.classList.add(classes.timeLineIconExpand);
-          if (timeLineContentRef) {
-            timeLineContentRef.classList.add(classes.showTimeLineContent);
-          }
-        } else {
+
+        if (!entry.intersectionRatio && !entry.isIntersecting) {
           timeLineIconRef.classList.remove(classes.timeLineIconExpand);
           if (timeLineContentRef) {
             timeLineContentRef.classList.remove(classes.showTimeLineContent);
           }
         }
+
+        if (entry.intersectionRatio > 0.2 && entry.isIntersecting) {
+          timeLineIconRef.classList.add(classes.timeLineIconExpand);
+          if (timeLineContentRef) {
+            timeLineContentRef.classList.add(classes.showTimeLineContent);
+          }
+        }
       };
       const obsOptions = {
         root: null,
-        threshold: 0.2,
+        threshold: [0, 0.2],
       };
       const timelineObserver = new IntersectionObserver(
         obsCallBack,
