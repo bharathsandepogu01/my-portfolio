@@ -4,12 +4,14 @@ import AppText from '@components/AppText';
 import classes from './styles.module.scss';
 
 function AppButton(props) {
-  const {primary, secondary, btnText, onClick} = props;
+  const {primary, secondary, btnText, onClick, children, customClassName} =
+    props;
 
   const classNames = clsx(
     classes.button,
     primary && classes.primaryBtn,
     secondary && classes.secondaryBtn,
+    customClassName && customClassName,
   );
 
   const btnTextClassNames = clsx(
@@ -24,7 +26,8 @@ function AppButton(props) {
         semiBold
         small
         customClassName={btnTextClassNames}>
-        {btnText}
+        {btnText && btnText}
+        {children}
       </AppText>
     </button>
   );

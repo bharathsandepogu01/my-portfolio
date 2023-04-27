@@ -16,12 +16,23 @@
     }
 }
 
+.commonBtnText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
 .primaryBtn {
     background-color: var(--primary-color);
 }
 
 .primaryBtnText {
+    @extend .commonBtnText;
     color: var(--btn-text-primary-color);
+    fill: var(--btn-text-primary-color);
+    stroke: var(--btn-text-primary-color);
 }
 
 .secondaryBtn {
@@ -29,5 +40,8 @@
 }
 
 .secondaryBtnText {
+    @extend .commonBtnText;
     color: var(--btn-text-secondary-color);
+    fill: var(--btn-text-secondary-color);
+    stroke: var(--btn-text-secondary-color);
 }
