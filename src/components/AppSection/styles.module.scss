@@ -10,15 +10,15 @@
 }
 
 .sectionLine {
-    height: 2.5px;
+    height: 0.2rem;
     background-color: var(--primary-color);
     position: relative;
     width: 0px;
-    transition: 0.3s width ease;
+    transition: 1s width ease;
 
     &::after {
         content: '';
-        @include circle(8px);
+        @include circle(0.8rem);
         @include centerAbsoluteElement();
         left: 100%;
         position: absolute;
