@@ -163,7 +163,7 @@ function ExperienceSection() {
                     {content.highlights.map((highlight, index) => {
                       return (
                         <li key={index}>
-                          <AppText variant="p" small>
+                          <AppText variant="p" small secondaryText>
                             {highlight}
                           </AppText>
                         </li>

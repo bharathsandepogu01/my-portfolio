@@ -21,7 +21,6 @@
         @include circle(0.8rem);
         @include centerAbsoluteElement();
         left: 100%;
-        position: absolute;
         background-color: var(--primary-color);
     }
 }
