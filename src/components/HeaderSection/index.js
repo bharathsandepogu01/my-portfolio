@@ -21,13 +21,13 @@ function HeaderSection() {
   return (
     <section className={classes.headerSectionContainer} id={'headerSection'}>
       <div className={classes.contentContainer} ref={contentRef}>
-        <AppText variant="p" large>
+        <AppText variant="p" extraMedium semiBold>
           Hello, I am
         </AppText>
         <AppText variant="h1" extraLarge primaryColor bold>
           Bharath Sandepogu
         </AppText>
-        <AppText variant="p" light>
+        <AppText variant="p" secondaryText medium>
           A passionate Full Stack Software Developer having an experience of
           building Web and Mobile applications with JavaScript / Reactjs /
           Nodejs / React Native and some other cool libraries and frameworks.

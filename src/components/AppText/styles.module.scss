@@ -2,8 +2,8 @@
 
 .commonTextStyles {
     color: var(--text-primary-color);
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 .extraLarge {
@@ -14,12 +14,20 @@
     font-size: 4rem;
 }
 
-.medium {
+.extraMedium {
     font-size: 3.2rem;
+}
+
+.medium {
+    font-size: 2.4rem;
 }
 
 .small {
     font-size: 1.6rem;
+}
+
+.extraSmall {
+    font-size: 1.2rem;
 }
 
 .tiny {
@@ -32,6 +40,10 @@
 
 .primaryColor {
     color: var(--primary-color);
+}
+
+.semiBold {
+    font-weight: 500;
 }
 
 .bold {

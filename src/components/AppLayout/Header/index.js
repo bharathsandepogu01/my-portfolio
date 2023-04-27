@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import Logo from '@components/Logo';
+import AppLogo from '@components/AppLogo';
 import HamBurgerMenu from '@components/HamburgerMenu';
 import classes from './styles.module.scss';
 import ThemeButton from '@components/ThemeButton';
@@ -28,7 +28,7 @@ function Header() {
 
   return (
     <header className={classes.headerContainer} ref={headerRef}>
-      <Logo />
+      <AppLogo />
       <HamBurgerMenu />
       <ThemeButton />
     </header>

@@ -7,7 +7,7 @@ import Footer from './Footer';
 import classes from './styles.module.scss';
 
 const rubik = Rubik({
-  weight: ['300', '500', '600'],
+  weight: ['300', '400', '500', '600'],
   style: ['normal'],
   subsets: ['latin'],
 });

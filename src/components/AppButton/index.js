@@ -19,7 +19,11 @@ function AppButton(props) {
 
   return (
     <button className={classNames} onClick={() => onClick && onClick()}>
-      <AppText variant="span" small customClassName={btnTextClassNames}>
+      <AppText
+        variant="span"
+        semiBold
+        small
+        customClassName={btnTextClassNames}>
         {btnText}
       </AppText>
     </button>

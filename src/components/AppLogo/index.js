@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import classes from './styles.module.scss';
 
-function Logo() {
+function AppLogo() {
   const borderRef = useRef();
 
   const handleOnMouseEnter = () => {
@@ -28,4 +28,4 @@ function Logo() {
   );
 }
 
-export default Logo;
+export default AppLogo;

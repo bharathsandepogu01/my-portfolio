@@ -5,12 +5,12 @@ import {Rubik} from 'next/font/google';
 import clsx from 'clsx';
 
 const rubik = Rubik({
-  weight: ['300', '500', '600'],
+  weight: ['300', '400', '500', '600'],
   style: ['normal'],
   subsets: ['latin'],
 });
 
-const Modal = ({
+const AppModal = ({
   showModal,
   onOpenModal = () => {},
   onCloseModal = () => {},
@@ -46,4 +46,4 @@ const Modal = ({
   );
 };
 
-export default Modal;
+export default AppModal;

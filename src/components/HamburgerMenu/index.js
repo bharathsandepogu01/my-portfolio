@@ -5,7 +5,7 @@ import classes from './styles.module.scss';
 import useWindowSize from '@hooks/useWindowSize';
 import AppText from '@components/AppText';
 
-const Modal = dynamic(() => import('@components/Modal'), {ssr: false});
+const Modal = dynamic(() => import('@components/AppModal'), {ssr: false});
 
 function HamBurgerMenu() {
   const [expandMenu, setExpandMenu] = useState(false);
@@ -57,35 +57,35 @@ function HamBurgerMenu() {
         aria-label={'links'}>
         <li>
           <a href="#">
-            <AppText variant="span" small secondaryText>
+            <AppText variant="span" small secondaryText semiBold>
               Home
             </AppText>
           </a>
         </li>
         <li>
           <a href="#">
-            <AppText variant="span" small secondaryText>
+            <AppText variant="span" small secondaryText semiBold>
               About
             </AppText>
           </a>
         </li>
         <li>
           <a href="#">
-            <AppText variant="span" small secondaryText>
+            <AppText variant="span" small secondaryText semiBold>
               Experience
             </AppText>
           </a>
         </li>
         <li>
           <a href="#">
-            <AppText variant="span" small secondaryText>
+            <AppText variant="span" small secondaryText semiBold>
               Projects
             </AppText>
           </a>
         </li>
         <li>
           <a href="#">
-            <AppText variant="span" small secondaryText>
+            <AppText variant="span" small secondaryText semiBold>
               Blogs
             </AppText>
           </a>
@@ -120,35 +120,35 @@ function HamBurgerMenu() {
             ref={mobileMenuLinks}>
             <li>
               <a href="#">
-                <AppText variant="span" small secondaryText>
+                <AppText variant="span" small secondaryText semiBold>
                   Home
                 </AppText>
               </a>
             </li>
             <li>
               <a href="#headerSection">
-                <AppText variant="span" small secondaryText>
+                <AppText variant="span" small secondaryText semiBold>
                   About
                 </AppText>
               </a>
             </li>
             <li>
               <a href="#testSection">
-                <AppText variant="span" small secondaryText>
+                <AppText variant="span" small secondaryText semiBold>
                   Experience
                 </AppText>
               </a>
             </li>
             <li>
               <a href="#">
-                <AppText variant="span" small secondaryText>
+                <AppText variant="span" small secondaryText semiBold>
                   Projects
                 </AppText>
               </a>
             </li>
             <li>
               <a href="#">
-                <AppText variant="span" small secondaryText>
+                <AppText variant="span" small secondaryText semiBold>
                   Blogs
                 </AppText>
               </a>

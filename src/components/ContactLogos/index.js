@@ -34,7 +34,7 @@ function ContactLogos() {
       {contactInfoArr.map(item => {
         const {icon: Icon} = item;
         return (
-          <a href={item.url} target="_blank">
+          <a href={item.url} target="_blank" key={item.id}>
             <div className={classes.iconContainer}>
               <Icon className={classes.logoIcon} />
             </div>
