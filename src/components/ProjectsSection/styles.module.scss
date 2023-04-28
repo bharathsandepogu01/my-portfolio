@@ -33,21 +33,6 @@
     transform: translate(0, 0);
 }
 
-.projectContentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 1.6rem;
-    padding: $padding-24 $padding-32;
-}
-
-.projectTechStack {
-    &>span {
-        margin-right: 1.6rem;
-    }
-}
-
 .projectImageContainer {
     height: 250px;
     width: 100%;
@@ -64,44 +49,85 @@
     @media screen and (max-width: $mobile-screen-max-width) {
         height: 200px;
     }
-}
 
-.imageWrapper {
-    @include centerAbsoluteElement();
-    height: 60%;
-    width: 70%;
+    .imageWrapper {
+        @include centerAbsoluteElement();
+        height: 60%;
+        width: 70%;
 
-    &>img {
-        transition: 0.3s transform ease;
-        border-radius: calc($border-radius / 2);
+        &>img {
+            transition: 0.3s transform ease;
+            border-radius: calc($border-radius / 2);
+        }
+    }
+
+    .imageWrapperMobile {
+        position: absolute;
+        height: 80%;
+        width: 25%;
     }
 }
 
-.imageWrapperMobile {
-    position: absolute;
-    height: 80%;
-    width: 25%;
-}
-
-.linksContainer {
+.projectContentContainer {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
-    gap: 1.6rem
-}
+    gap: 1.6rem;
+    padding: $padding-24 $padding-32;
 
-.linkIconContainer {
-    height: 2.4rem;
-    width: 2.4rem;
-    transition: 0.15s transform ease;
+    .linksHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
 
-    &:hover {
-        transform: scale(1.15);
+        .folderIconContainer {
+            height: 2.4rem;
+            width: 2.4rem;
+
+            .folderIcon {
+                @include icon(var(--text-primary-color))
+            }
+        }
+
+        .linksContainer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.6rem;
+
+            .linkIconContainer {
+                height: 2.4rem;
+                width: 2.4rem;
+                transition: 0.15s transform ease;
+
+                &:hover {
+                    transform: scale(1.15);
+                }
+            }
+
+            .linkIcon {
+                @include icon(var(--text-primary-color))
+            }
+        }
     }
-}
 
-.linkIcon {
-    @include icon(var(--text-primary-color))
+    .projectTechStack {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        row-gap: 0.8rem;
+        column-gap: 0.8rem;
+        margin-top: 0.8rem;
+
+        &>p {
+            background-color: var(--background-color);
+            padding: $padding-4 $padding-12;
+            border-radius: 999px;
+        }
+    }
 }
 
 .loadMoreBtnWrapper {

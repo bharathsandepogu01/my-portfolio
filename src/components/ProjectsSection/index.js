@@ -7,6 +7,7 @@ import AppButton from '@components/AppButton';
 import GithubIcon from '@public/icons/github-icon.svg';
 import APKFileIcon from '@public/icons/apk-file-icon.svg';
 import WebIcon from '@public/icons/web-icon.svg';
+import FolderIcon from '@public/icons/folder-icon.svg';
 import classes from './styles.module.scss';
 
 const mainProjects = [
@@ -163,6 +164,39 @@ function ProjectsSection() {
                 </div>
               </div>
               <div className={classes.projectContentContainer}>
+                <div className={classes.linksHeader}>
+                  <div className={classes.folderIconContainer}>
+                    <FolderIcon className={classes.folderIcon} />
+                  </div>
+                  <div className={classes.linksContainer}>
+                    {project.githubLink && (
+                      <div className={classes.linkIconContainer}>
+                        <a href={project.githubLink} target="_blank">
+                          <GithubIcon className={classes.linkIcon} />
+                        </a>
+                      </div>
+                    )}
+                    {project.demoLink && (
+                      <div className={classes.linkIconContainer}>
+                        <a href={project.demoLink} target="_blank">
+                          <WebIcon className={classes.linkIcon} />
+                        </a>
+                      </div>
+                    )}
+                    {project.apkLink && (
+                      <div className={classes.linkIconContainer}>
+                        <a href={project.apkLink} target="_blank">
+                          <APKFileIcon className={classes.linkIcon} />
+                        </a>
+                      </div>
+                    )}
+                    {project.isInProgress && (
+                      <AppText variant="span" extraSmall>
+                        Coming Soon
+                      </AppText>
+                    )}
+                  </div>
+                </div>
                 <AppText variant="h3" medium semiBold>
                   {project.name}
                 </AppText>
@@ -172,39 +206,11 @@ function ProjectsSection() {
                 <div className={classes.projectTechStack}>
                   {project.techStack.map(tech => {
                     return (
-                      <AppText variant="span" extraSmall key={tech}>
+                      <AppText variant="p" extraSmall key={tech}>
                         {tech}
                       </AppText>
                     );
                   })}
-                </div>
-                <div className={classes.linksContainer}>
-                  {project.githubLink && (
-                    <div className={classes.linkIconContainer}>
-                      <a href={project.githubLink} target="_blank">
-                        <GithubIcon className={classes.linkIcon} />
-                      </a>
-                    </div>
-                  )}
-                  {project.demoLink && (
-                    <div className={classes.linkIconContainer}>
-                      <a href={project.demoLink} target="_blank">
-                        <WebIcon className={classes.linkIcon} />
-                      </a>
-                    </div>
-                  )}
-                  {project.apkLink && (
-                    <div className={classes.linkIconContainer}>
-                      <a href={project.apkLink} target="_blank">
-                        <APKFileIcon className={classes.linkIcon} />
-                      </a>
-                    </div>
-                  )}
-                  {project.isInProgress && (
-                    <AppText variant="span" extraSmall>
-                      Coming Soon
-                    </AppText>
-                  )}
                 </div>
               </div>
             </div>
