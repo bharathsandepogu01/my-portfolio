@@ -28,9 +28,10 @@ function HeaderSection() {
           Bharath Sandepogu
         </AppText>
         <AppText variant="p" secondaryText medium>
-          A passionate Full Stack Software Developer having an experience of
-          building Web and Mobile applications with JavaScript / Reactjs /
-          Nodejs / React Native and some other cool libraries and frameworks.
+          As a passionate Full Stack Software Developer, I've honed my skills in
+          building Web and Mobile applications using JavaScript, ReactJS,
+          NodeJS, React Native, and a host of other cool libraries and
+          frameworks.
         </AppText>
         <div className={classes.contactLogos}>
           <ContactLogos />
