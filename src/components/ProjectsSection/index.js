@@ -160,7 +160,12 @@ function ProjectsSection() {
                     classes.imageWrapper,
                     !project.isWebApp && classes.imageWrapperMobile,
                   )}>
-                  <Image alt={project.name} src={project.imgURL} fill />
+                  <Image
+                    alt={project.name}
+                    src={project.imgURL}
+                    fill
+                    loading={'lazy'}
+                  />
                 </div>
               </div>
               <div className={classes.projectContentContainer}>
@@ -197,7 +202,7 @@ function ProjectsSection() {
                     )}
                   </div>
                 </div>
-                <AppText variant="h3" medium semiBold>
+                <AppText variant="h3" semiBold>
                   {project.name}
                 </AppText>
                 <AppText variant="p" small secondaryText>

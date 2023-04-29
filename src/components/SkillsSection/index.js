@@ -207,7 +207,7 @@ function SkillsSection() {
           <div
             className={classes.skillsSubSection}
             ref={el => (skillsRef.current.programmingRef = el)}>
-            <AppText variant={'h3'} semiBold medium>
+            <AppText variant={'h3'} semiBold>
               Programming Languages
             </AppText>
             <LogoSubSection skills={programmingSkills} />
@@ -215,7 +215,7 @@ function SkillsSection() {
           <div
             className={classes.skillsSubSection}
             ref={el => (skillsRef.current.backendRef = el)}>
-            <AppText variant={'h3'} semiBold medium>
+            <AppText variant={'h3'} semiBold>
               Backend
             </AppText>
             <LogoSubSection skills={backendSkills} />
@@ -223,7 +223,7 @@ function SkillsSection() {
           <div
             className={classes.skillsSubSection}
             ref={el => (skillsRef.current.cloudRef = el)}>
-            <AppText variant={'h3'} semiBold medium>
+            <AppText variant={'h3'} semiBold>
               CI/CD
             </AppText>
             <LogoSubSection skills={cloudSkills} />
@@ -233,7 +233,7 @@ function SkillsSection() {
           <div
             className={classes.skillsSubSection}
             ref={el => (skillsRef.current.frontendRef = el)}>
-            <AppText variant={'h3'} semiBold medium>
+            <AppText variant={'h3'} semiBold>
               Frontend
             </AppText>
             <LogoSubSection skills={frontendSkills} />

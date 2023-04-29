@@ -140,6 +140,7 @@ function ExperienceSection() {
                         alt={content.company}
                         src={content.companyLogoUrl}
                         fill
+                        loading={'lazy'}
                       />
                     </div>
                     <div>

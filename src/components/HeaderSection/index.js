@@ -46,8 +46,8 @@ function HeaderSection() {
           <Image
             alt="Bharath Sandepogu's Avatar Image"
             src={'/images/avatar.png'}
-            priority
             fill
+            loading={'lazy'}
             onLoadingComplete={handleImageLoadingComplete}
           />
         </div>
