@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'mixins';
+
+.logosMainContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+
+
+    .logoContainer {
+        background-color: var(--background-color-dark);
+        padding: $padding-16;
+        border-radius: calc($border-radius/2);
+        text-decoration: none;
+
+        &:hover {
+            .logo {
+                transform: scale(1.1);
+            }
+
+            &>p {
+                color: var(--text-primary-color);
+            }
+        }
+
+        .logo {
+            border-radius: calc($border-radius/2);
+            height: 4rem;
+            width: 4rem;
+            margin-bottom: 0.8rem;
+            transition: 0.1s transform ease-in-out;
+        }
+    }
+}
