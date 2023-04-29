@@ -35,7 +35,10 @@ function ThemeButton() {
   return (
     <button
       className={classes.themeButtonContainer}
-      onClick={handleThemeChange}>
+      onClick={handleThemeChange}
+      aria-label={`click to change theme to ${
+        isDarkTheme ? 'light theme' : 'dark theme'
+      }`}>
       <div className={classes.darkThemeContainer} ref={darkThemeIconRef}>
         <DarkThemeIcon className={classes.themeIcon} />
       </div>

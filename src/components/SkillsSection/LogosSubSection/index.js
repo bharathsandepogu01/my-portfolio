@@ -12,7 +12,8 @@ function LogoSubSection({skills}) {
             href={skill.url}
             target={'_blank'}
             className={classes.logoContainer}
-            key={skill.id}>
+            key={skill.id}
+            aria-label={`click to open ${skill.name} docs`}>
             <Logo className={classes.logo} />
             <AppText variant="p" small secondaryText>
               {skill.name}

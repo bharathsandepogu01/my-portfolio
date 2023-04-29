@@ -29,7 +29,10 @@ function AppSection(props) {
   }, [props.headerTxt]);
 
   return (
-    <section className={classes.sectionContainer} id={props.headerTxt}>
+    <section
+      className={classes.sectionContainer}
+      id={props.headerTxt}
+      aria-label={props.headerTxt}>
       {props.headerTxt && (
         <>
           <AppText
@@ -39,7 +42,7 @@ function AppSection(props) {
             customClassName={classes.sectionHeader}>
             {props.headerTxt}
           </AppText>
-          <div className={classes.sectionLine} ref={sectionLineRef}></div>
+          <div className={classes.sectionLine} ref={sectionLineRef} />
         </>
       )}
       {props.children}

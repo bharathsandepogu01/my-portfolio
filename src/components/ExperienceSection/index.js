@@ -151,7 +151,8 @@ function ExperienceSection() {
                       <a
                         href={content.companyUrl}
                         target="_blank"
-                        className={classes.companyUrl}>
+                        className={classes.companyUrl}
+                        aria-label={`click to open ${content.company} company page`}>
                         <AppText variant="span" secondaryText extraSmall>
                           {`@ ${content.company} | `}
                         </AppText>

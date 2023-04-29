@@ -74,7 +74,9 @@ function HamBurgerMenu() {
         {appLinks.map(appLink => {
           return (
             <li key={appLink}>
-              <a href={`#${appLink}`}>
+              <a
+                href={`#${appLink}`}
+                aria-label={`click to go to ${appLink} section`}>
                 <AppText variant="span" small secondaryText semiBold>
                   {appLink}
                 </AppText>
@@ -87,7 +89,7 @@ function HamBurgerMenu() {
         className={classes.hamburger}
         ref={hamburgerRef}
         onClick={handleOnClickMenu}
-        aria-label={`${expandMenu ? 'close menu' : 'open menu'}`}>
+        aria-label={`click to ${expandMenu ? 'close menu' : 'open menu'}`}>
         <span />
       </button>
       <span
@@ -102,7 +104,7 @@ function HamBurgerMenu() {
         <nav className={classes.mobileMenuContainer}>
           <button
             className={classes.cancelIcon}
-            aria-label="close menu"
+            aria-label="click to close menu"
             onClick={handleOnClickMenu}>
             <span aria-hidden />
           </button>
@@ -113,7 +115,10 @@ function HamBurgerMenu() {
             {appLinks.map(appLink => {
               return (
                 <li key={appLink}>
-                  <a href={`#${appLink}`} onClick={() => setExpandMenu(false)}>
+                  <a
+                    href={`#${appLink}`}
+                    onClick={() => setExpandMenu(false)}
+                    aria-label={`click to go to ${appLink} section`}>
                     <AppText variant="span" small secondaryText semiBold>
                       {appLink}
                     </AppText>

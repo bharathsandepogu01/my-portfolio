@@ -177,21 +177,30 @@ function ProjectsSection() {
                   <div className={classes.linksContainer}>
                     {project.githubLink && (
                       <div className={classes.linkIconContainer}>
-                        <a href={project.githubLink} target="_blank">
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          aria-label={`click to open ${project.name} github repository`}>
                           <GithubIcon className={classes.linkIcon} />
                         </a>
                       </div>
                     )}
                     {project.demoLink && (
                       <div className={classes.linkIconContainer}>
-                        <a href={project.demoLink} target="_blank">
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          aria-label={`click to open ${project.name} demo`}>
                           <WebIcon className={classes.linkIcon} />
                         </a>
                       </div>
                     )}
                     {project.apkLink && (
                       <div className={classes.linkIconContainer}>
-                        <a href={project.apkLink} target="_blank">
+                        <a
+                          href={project.apkLink}
+                          target="_blank"
+                          aria-label={`click to open ${project.name} apk file`}>
                           <APKFileIcon className={classes.linkIcon} />
                         </a>
                       </div>
@@ -224,7 +233,10 @@ function ProjectsSection() {
         })}
       </div>
       <div className={classes.loadMoreBtnWrapper}>
-        <AppButton secondary onClick={handleOnClickLoadMoreBtn}>
+        <AppButton
+          secondary
+          onClick={handleOnClickLoadMoreBtn}
+          ariaLabel={`click to show ${showMore ? 'more' : 'less'} projects`}>
           <span>{showMore ? 'Show More' : 'Show Less'}</span>
         </AppButton>
       </div>

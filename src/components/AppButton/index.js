@@ -4,8 +4,15 @@ import AppText from '@components/AppText';
 import classes from './styles.module.scss';
 
 function AppButton(props) {
-  const {primary, secondary, btnText, onClick, children, customClassName} =
-    props;
+  const {
+    primary,
+    secondary,
+    btnText,
+    onClick,
+    children,
+    customClassName,
+    ariaLabel,
+  } = props;
 
   const classNames = clsx(
     classes.button,
@@ -20,7 +27,10 @@ function AppButton(props) {
   );
 
   return (
-    <button className={classNames} onClick={() => onClick && onClick()}>
+    <button
+      className={classNames}
+      onClick={() => onClick && onClick()}
+      aria-label={ariaLabel}>
       <AppText
         variant="span"
         semiBold

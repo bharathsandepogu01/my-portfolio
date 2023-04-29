@@ -20,7 +20,10 @@ function HeaderSection() {
   };
 
   return (
-    <section className={classes.headerSectionContainer} id={HOME_SECTION}>
+    <section
+      className={classes.headerSectionContainer}
+      id={HOME_SECTION}
+      aria-label={HOME_SECTION}>
       <div className={classes.contentContainer} ref={contentRef}>
         <AppText variant="p" extraMedium semiBold>
           Hello, I am
@@ -38,8 +41,16 @@ function HeaderSection() {
           <ContactLogos />
         </div>
         <div className={classes.btnContainer}>
-          <AppButton btnText="Contact Me" primary />
-          <AppButton btnText="See My Resume" secondary />
+          <AppButton
+            btnText="Contact Me"
+            primary
+            ariaLabel={'click to contact section'}
+          />
+          <AppButton
+            btnText="See My Resume"
+            secondary
+            ariaLabel={`click to see Bharath Sandepogu's Resume`}
+          />
         </div>
       </div>
       <div className={classes.imageContainer} ref={imageRef}>
