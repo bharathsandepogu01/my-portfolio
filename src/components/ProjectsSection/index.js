@@ -70,7 +70,7 @@ const mainProjects = [
   {
     id: 'minesweeper',
     name: 'Minesweeper',
-    description: `A simple web application for simplified minesweeper game with difficulty levels`,
+    description: `A simple web application for simplified minesweeper game with difficulty levels.`,
     techStack: ['React', 'Typescript', 'Redux', 'Lodash'],
     imgURL: '/images/minesweeper-project.png',
     githubLink: `https://github.com/bharathsandepogu01/Minesweeper`,
