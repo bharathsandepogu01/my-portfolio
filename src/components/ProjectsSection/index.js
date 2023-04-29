@@ -4,6 +4,7 @@ import Image from 'next/image';
 import AppSection from '@components/AppSection';
 import AppText from '@components/AppText';
 import AppButton from '@components/AppButton';
+import {PROJECTS_SECTION} from '@constants/sections';
 import GithubIcon from '@public/icons/github-icon.svg';
 import APKFileIcon from '@public/icons/apk-file-icon.svg';
 import WebIcon from '@public/icons/web-icon.svg';
@@ -144,7 +145,7 @@ function ProjectsSection() {
   const showMore = projects.length < mainProjects.length;
 
   return (
-    <AppSection headerTxt={'PROJECTS'}>
+    <AppSection headerTxt={PROJECTS_SECTION}>
       <div className={classes.projectsListContainer}>
         {projects.map(project => {
           return (

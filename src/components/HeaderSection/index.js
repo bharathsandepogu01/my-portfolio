@@ -3,6 +3,7 @@ import Image from 'next/image';
 import AppText from '@components/AppText';
 import AppButton from '@components/AppButton';
 import ContactLogos from '@components/ContactLogos';
+import {HOME_SECTION} from '@constants/sections';
 import classes from './styles.module.scss';
 
 function HeaderSection() {
@@ -19,7 +20,7 @@ function HeaderSection() {
   };
 
   return (
-    <section className={classes.headerSectionContainer} id={'headerSection'}>
+    <section className={classes.headerSectionContainer} id={HOME_SECTION}>
       <div className={classes.contentContainer} ref={contentRef}>
         <AppText variant="p" extraMedium semiBold>
           Hello, I am

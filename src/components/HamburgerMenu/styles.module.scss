@@ -28,6 +28,7 @@
 
         &>a {
             text-decoration: none;
+            text-transform: capitalize;
         }
 
         &:hover {
@@ -54,8 +55,8 @@
         gap: 3.2rem;
     }
 
-    @for $i from 1 through 5 {
-        $delay: (6 - $i) * 0.06s;
+    @for $i from 1 through 6 {
+        $delay: (7 - $i) * 0.06s;
 
         &>li:nth-child(#{$i}) {
             transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
@@ -184,6 +185,7 @@
 
         &>a {
             text-decoration: none;
+            text-transform: capitalize;
         }
 
         &:hover {
@@ -197,7 +199,7 @@
 .displayMobileLinks {
     visibility: visible;
 
-    @for $i from 1 through 5 {
+    @for $i from 1 through 6 {
         $delay: $i * 0.12s;
 
         &>li:nth-child(#{$i}) {

@@ -5,6 +5,7 @@ import AppSection from '@components/AppSection';
 import AppText from '@components/AppText';
 import RocketIcon from '@public/icons/rocket-icon.svg';
 import TickIcon from '@public/icons/tick-icon.svg';
+import {EXPERIENCE_SECTION} from '@constants/sections';
 import classes from './styles.module.scss';
 
 const experienceArr = [
@@ -116,7 +117,7 @@ function ExperienceSection() {
   }, []);
 
   return (
-    <AppSection headerTxt={'EXPERIENCE'}>
+    <AppSection headerTxt={EXPERIENCE_SECTION}>
       <div className={classes.mainTimeLineContainer}>
         {experienceArr.map((experience, index) => {
           const {icon: Icon, content} = experience;

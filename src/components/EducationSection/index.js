@@ -43,7 +43,7 @@ function EducationSection() {
   }, []);
 
   return (
-    <AppSection headerTxt={'EDUCATION'}>
+    <AppSection headerTxt={'education'}>
       <div className={classes.educationMainContainer}>
         {educations.map(education => {
           return (

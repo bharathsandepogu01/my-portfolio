@@ -1,11 +1,27 @@
 import React, {useEffect, useRef, useState} from 'react';
 import dynamic from 'next/dynamic';
-
-import classes from './styles.module.scss';
 import useWindowSize from '@hooks/useWindowSize';
 import AppText from '@components/AppText';
+import {
+  BLOGS_SECTION,
+  CONTACT_SECTION,
+  EXPERIENCE_SECTION,
+  HOME_SECTION,
+  PROJECTS_SECTION,
+  SKILLS_SECTION,
+} from '@constants/sections';
+import classes from './styles.module.scss';
 
 const Modal = dynamic(() => import('@components/AppModal'), {ssr: false});
+
+const appLinks = [
+  HOME_SECTION,
+  EXPERIENCE_SECTION,
+  SKILLS_SECTION,
+  PROJECTS_SECTION,
+  BLOGS_SECTION,
+  CONTACT_SECTION,
+];
 
 function HamBurgerMenu() {
   const [expandMenu, setExpandMenu] = useState(false);
@@ -55,41 +71,17 @@ function HamBurgerMenu() {
         className={classes.linksContainer}
         ref={linkContainerRef}
         aria-label={'links'}>
-        <li>
-          <a href="#">
-            <AppText variant="span" small secondaryText semiBold>
-              Home
-            </AppText>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <AppText variant="span" small secondaryText semiBold>
-              About
-            </AppText>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <AppText variant="span" small secondaryText semiBold>
-              Experience
-            </AppText>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <AppText variant="span" small secondaryText semiBold>
-              Projects
-            </AppText>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <AppText variant="span" small secondaryText semiBold>
-              Blogs
-            </AppText>
-          </a>
-        </li>
+        {appLinks.map(appLink => {
+          return (
+            <li key={appLink}>
+              <a href={`#${appLink}`}>
+                <AppText variant="span" small secondaryText semiBold>
+                  {appLink}
+                </AppText>
+              </a>
+            </li>
+          );
+        })}
       </ul>
       <button
         className={classes.hamburger}
@@ -118,41 +110,17 @@ function HamBurgerMenu() {
             className={classes.mobileLinksContainer}
             aria-label={'links'}
             ref={mobileMenuLinks}>
-            <li>
-              <a href="#">
-                <AppText variant="span" small secondaryText semiBold>
-                  Home
-                </AppText>
-              </a>
-            </li>
-            <li>
-              <a href="#headerSection">
-                <AppText variant="span" small secondaryText semiBold>
-                  About
-                </AppText>
-              </a>
-            </li>
-            <li>
-              <a href="#testSection">
-                <AppText variant="span" small secondaryText semiBold>
-                  Experience
-                </AppText>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <AppText variant="span" small secondaryText semiBold>
-                  Projects
-                </AppText>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <AppText variant="span" small secondaryText semiBold>
-                  Blogs
-                </AppText>
-              </a>
-            </li>
+            {appLinks.map(appLink => {
+              return (
+                <li key={appLink}>
+                  <a href={`#${appLink}`} onClick={() => setExpandMenu(false)}>
+                    <AppText variant="span" small secondaryText semiBold>
+                      {appLink}
+                    </AppText>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </Modal>

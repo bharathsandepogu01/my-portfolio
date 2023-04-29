@@ -29,7 +29,7 @@ function AppSection(props) {
   }, [props.headerTxt]);
 
   return (
-    <section className={classes.sectionContainer}>
+    <section className={classes.sectionContainer} id={props.headerTxt}>
       {props.headerTxt && (
         <>
           <AppText

@@ -10,10 +10,10 @@ function Main() {
   return (
     <main className={classes.mainContainer}>
       <HeaderSection />
-      <EducationSection />
-      <SkillsSection />
-      <ProjectsSection />
       <ExperienceSection />
+      <SkillsSection />
+      <EducationSection />
+      <ProjectsSection />
     </main>
   );
 }

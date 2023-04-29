@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import AppSection from '@components/AppSection';
 import AppText from '@components/AppText';
+import {SKILLS_SECTION} from '@constants/sections';
 import JavascriptLogo from '@public/icons/javascript-logo.svg';
 import PythonLogo from '@public/icons/python-logo.svg';
 import TypescriptLogo from '@public/icons/typescript-logo.svg';
@@ -201,7 +202,7 @@ function SkillsSection() {
   }, []);
 
   return (
-    <AppSection headerTxt={'SKILLS'}>
+    <AppSection headerTxt={SKILLS_SECTION}>
       <div className={classes.skillsMainContainer}>
         <div>
           <div
