@@ -4,6 +4,7 @@ import ExperienceSection from '@components/ExperienceSection';
 import ProjectsSection from '@components/ProjectsSection';
 import SkillsSection from '@components/SkillsSection';
 import EducationSection from '@components/EducationSection';
+import BlogsSection from '@components/BlogsSection';
 import classes from './styles.module.scss';
 
 function Main() {
@@ -14,6 +15,7 @@ function Main() {
       <SkillsSection />
       <EducationSection />
       <ProjectsSection />
+      <BlogsSection />
     </main>
   );
 }

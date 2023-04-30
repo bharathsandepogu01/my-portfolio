@@ -178,24 +178,24 @@ function Footer() {
             </div>
             <div className={classes.formBtnContainer}>
               <AppButton
-                btnText="Send"
+                btnText="Send Message"
                 type={'submit'}
                 primary
                 ariaLabel={'click to send message to Bharath Sandepogu'}
               />
               {formStates.isSendingData && (
                 <AppText variant="span" small>
-                  Your message is on the way...🚀🚀
+                  Your message is on the way...🚀
                 </AppText>
               )}
               {formStates.success && (
                 <AppText variant="span" small>
-                  Got your message...😃😃
+                  Got your message...😃
                 </AppText>
               )}
               {formStates.isError && (
                 <AppText variant="span" small>
-                  Please send again...🥺🥺
+                  Please send again...🥺
                 </AppText>
               )}
             </div>

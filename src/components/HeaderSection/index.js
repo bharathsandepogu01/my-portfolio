@@ -37,6 +37,9 @@ function HeaderSection() {
           NodeJS, React Native, and a host of other cool libraries and
           frameworks.
         </AppText>
+        <AppText variant="p" secondaryText medium>
+          Always a JavaScript Enthusiast...🤩
+        </AppText>
         <div className={classes.contactLogos}>
           <ContactLogos />
         </div>
