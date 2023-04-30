@@ -12,6 +12,7 @@ function AppButton(props) {
     children,
     customClassName,
     ariaLabel,
+    ...restProps
   } = props;
 
   const classNames = clsx(
@@ -29,8 +30,9 @@ function AppButton(props) {
   return (
     <button
       className={classNames}
-      onClick={() => onClick && onClick()}
-      aria-label={ariaLabel}>
+      onClick={e => onClick && onClick(e)}
+      aria-label={ariaLabel}
+      {...restProps}>
       <AppText
         variant="span"
         semiBold

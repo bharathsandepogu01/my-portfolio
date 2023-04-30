@@ -10,8 +10,8 @@ $timeline-top-margin: 0rem;
 $arrow-size: 2rem;
 
 .mainTimeLineContainer {
+    @include sectionContentContainer();
     position: relative;
-    margin-top: 6rem;
     margin-left: 3rem;
     margin-right: 3rem;
 
@@ -26,8 +26,6 @@ $arrow-size: 2rem;
     }
 
     @media screen and (max-width: $tab-screen-max-width) {
-        margin-bottom: 3rem;
-        margin-top: 3rem;
         margin-left: 2rem;
         margin-right: 2rem;
 

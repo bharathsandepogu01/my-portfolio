@@ -2,8 +2,8 @@
 @import 'mixins';
 
 .skillsMainContainer {
+    @include sectionContentContainer();
     display: flex;
-    margin-top: 6rem;
     gap: 4rem;
     width: 100%;
 
@@ -15,7 +15,6 @@
     }
 
     @media screen and (max-width: $tab-screen-max-width) {
-        margin-top: 3rem;
         flex-direction: column-reverse;
 
         &>div {

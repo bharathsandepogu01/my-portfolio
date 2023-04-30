@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin circle($size) {
     height: $size;
     width: $size;
@@ -33,4 +35,22 @@
     }
 }
 
-//TODO mixin for content subsection margins in eah sections
+@mixin headerContentContainer() {
+    padding: 2rem 8rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: 2rem 4rem;
+    }
+
+    @media screen and (max-width: $mobile-menu-max-width) {
+        padding: 1.2rem 2rem;
+    }
+}
+
+@mixin sectionContentContainer() {
+    margin-top: 6rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        margin-top: 3rem;
+    }
+}

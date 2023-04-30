@@ -1,13 +1,10 @@
 @import 'variables';
+@import 'mixins';
 
 .educationMainContainer {
-    margin-top: 6rem;
+    @include sectionContentContainer();
     display: flex;
     overflow: hidden;
-
-    @media screen and (max-width: $tab-screen-max-width) {
-        margin-top: 3rem;
-    }
 }
 
 .educationCard {

@@ -1,10 +1,11 @@
 @import 'variables';
+@import 'mixins';
 
 .headerContainer {
+    @include headerContentContainer();
     display: flex;
     align-items: center;
     gap: 1.6rem;
-    padding: 2rem 8rem;
     transform: translate(0, 0);
     transition: transform 0.2s ease-in-out 0.1s;
     position: sticky;
@@ -12,13 +13,6 @@
     background-color: var(--background-color);
     z-index: 1;
 
-    @media screen and (max-width: $tab-screen-max-width) {
-        padding: 2rem 4rem;
-    }
-
-    @media screen and (max-width: $mobile-menu-max-width) {
-        padding: 1.2rem 2rem;
-    }
 }
 
 .hideHeaderContainer {

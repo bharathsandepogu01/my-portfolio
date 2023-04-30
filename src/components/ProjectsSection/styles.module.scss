@@ -2,11 +2,11 @@
 @import 'mixins';
 
 .projectsListContainer {
+    @include sectionContentContainer();
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.6rem;
     overflow: hidden;
-    margin-top: 6rem;
 
     @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
@@ -14,10 +14,6 @@
 
     @media screen and (max-width: $mobile-menu-max-width) {
         grid-template-columns: 1fr;
-    }
-
-    @media screen and (max-width: $tab-screen-max-width) {
-        margin-top: 3rem;
     }
 }
 
