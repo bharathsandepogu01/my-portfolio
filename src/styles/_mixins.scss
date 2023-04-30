@@ -1,0 +1,56 @@
+@import 'variables';
+
+@mixin circle($size) {
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+}
+
+@mixin icon($color) {
+    height: 100%;
+    width: 100%;
+    fill: $color;
+    stroke: $color;
+}
+
+@mixin centerAbsoluteElement() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+@mixin section() {
+    padding: 6rem 12rem;
+    background-color: var(--background-color);
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: 3.2rem 6.4rem;
+    }
+
+    @media screen and (max-width: $mobile-screen-max-width) {
+        padding: 1.6rem 3.2rem;
+    }
+}
+
+@mixin headerContentContainer() {
+    padding: 2rem 8rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: 2rem 4rem;
+    }
+
+    @media screen and (max-width: $mobile-menu-max-width) {
+        padding: 1.2rem 2rem;
+    }
+}
+
+@mixin sectionContentContainer() {
+    margin-top: 6rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        margin-top: 3rem;
+    }
+}

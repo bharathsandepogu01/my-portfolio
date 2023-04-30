@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.32.1"
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^4.2.1"
+    "@svgr/webpack": "^7.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "sass": "^1.62.0"
   }
 }

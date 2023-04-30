@@ -1,0 +1,48 @@
+@import 'variables';
+
+.button {
+    border: unset;
+    border: 2.5px solid var(--primary-color);
+    border-radius: 1000px;
+    padding: $padding-16 $padding-32;
+    cursor: pointer;
+    // box-shadow: var(--primary-color) 0px 0px 4px;
+    opacity: 1;
+    transition: 0.15s opacity ease-in, 0.15s box-shadow ease-in;
+
+    &:hover {
+        opacity: 0.85;
+        box-shadow: unset;
+    }
+}
+
+.commonBtnText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.primaryBtn {
+    background-color: var(--primary-color);
+}
+
+.primaryBtnText {
+    @extend .commonBtnText;
+    color: var(--btn-text-primary-color);
+    fill: var(--btn-text-primary-color);
+    stroke: var(--btn-text-primary-color);
+}
+
+.secondaryBtn {
+    background-color: var(--background-color);
+}
+
+.secondaryBtnText {
+    @extend .commonBtnText;
+    color: var(--btn-text-secondary-color);
+    fill: var(--btn-text-secondary-color);
+    stroke: var(--btn-text-secondary-color);
+}

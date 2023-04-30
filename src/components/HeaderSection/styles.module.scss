@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mixins';
+
+.headerSectionContainer {
+    @include section();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        flex-direction: column;
+    }
+}
+
+.contentContainer {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.6rem;
+    opacity: 0;
+    transform: translate(0, -10%);
+    transition: 1s opacity ease, 1s transform ease;
+
+    .contactLogos {
+        margin-top: 1.6rem;
+    }
+
+    .btnContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        margin-top: 2.4rem
+    }
+}
+
+.showContentContainer {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.imageContainer {
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transition: 2s opacity ease;
+
+    .imageWrapper {
+        position: relative;
+        height: 600px;
+        width: 400px;
+
+        @media screen and (max-width: $tab-screen-max-width) {
+            height: 75vw;
+            width: 50vw;
+        }
+
+        @media screen and (max-width: $mobile-screen-max-width) {
+            height: 120vw;
+            width: 80vw;
+        }
+    }
+}
+
+.showImageContainer {
+    opacity: 1;
+}

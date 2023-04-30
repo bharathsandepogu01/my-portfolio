@@ -1,0 +1,25 @@
+.lightTheme {
+    // configure all color variants here for dark theme
+    --primary-color: #0e8388;
+    --primary-hover-color: #2e4f4f;
+    --background-color: #ffffff;
+    --background-color-dark: #f7f7f7;
+    --border-color: #0b0b134d;
+    --text-primary-color: #0b0b13;
+    --text-secondary-color: #555555;
+    --btn-text-primary-color: #ffffff;
+    --btn-text-secondary-color: #0e8388;
+}
+
+.darkTheme {
+    // configure all color variants here for light theme
+    --primary-color: #0e8388;
+    --primary-hover-color: #2e4f4f;
+    --background-color: #000000;
+    --background-color-dark: #1f2028;
+    --border-color: #ffffff4d;
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #ffffffcc;
+    --btn-text-primary-color: #ffffff;
+    --btn-text-secondary-color: #0e8388;
+}

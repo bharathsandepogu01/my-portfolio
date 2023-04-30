@@ -1,0 +1,23 @@
+@import 'mixins';
+
+.contactLogosContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.iconContainer {
+    @include circle(4.4rem);
+    transition: 0.1s transform ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.logoIcon {
+    height: 100%;
+    width: 100%;
+}

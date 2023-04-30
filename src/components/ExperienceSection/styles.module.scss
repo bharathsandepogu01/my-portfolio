@@ -1,0 +1,170 @@
+@import 'variables';
+@import 'mixins';
+
+// all the values are calculated based on timeline-icon, arrow-icon, and timeline-content-size and width of line. 
+// Be careful while updating the rem values
+
+$main-line-width: 0.4rem;
+$timeline-icon-size: 5.6rem;
+$timeline-top-margin: 0rem;
+$arrow-size: 2rem;
+
+.mainTimeLineContainer {
+    @include sectionContentContainer();
+    position: relative;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: $main-line-width;
+        background-color: var(--border-color);
+        border-radius: $border-radius;
+        left: 50%;
+    }
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        &::before {
+            left: 0;
+        }
+    }
+}
+
+.timeLine {
+    min-height: calc(2 * $timeline-icon-size);
+    height: fit-content;
+    position: relative;
+    top: $timeline-top-margin;
+}
+
+.timeLineIcon {
+    @include circle($timeline-icon-size);
+    position: relative;
+    left: 50%;
+    margin-left: - calc(($timeline-icon-size - $main-line-width) / 2);
+    border: 0.4rem solid var(--border-color);
+    background-color: var(--background-color);
+    padding: 0.8rem;
+    transform: scale(0);
+    transition: 0.3s transform ease-in-out;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        left: 0;
+    }
+
+    .icon {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.timeLineIconExpand {
+    transform: scale(1);
+}
+
+.timeLineContentLeft {
+    position: relative;
+    top: - calc($timeline-icon-size + $timeline-top-margin);
+    width: calc(50% - $timeline-icon-size);
+    background-color: var(--background-color-dark);
+    border-radius: $border-radius;
+    padding: $padding-16;
+    opacity: 0;
+    transform: translate(-5%, 0);
+    transition: 0.6s transform ease, 0.6s opacity ease;
+
+    &:hover {
+        .companyUrl {
+            &>span {
+                color: var(--text-primary-color);
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        height: 2rem;
+        width: 2rem;
+        position: absolute;
+        background-color: var(--background-color-dark);
+        left: calc(100% - ($arrow-size / 2));
+        transform: rotate(45deg);
+        top: $arrow-size;
+    }
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        width: calc(100% - $timeline-icon-size);
+        left: $timeline-icon-size;
+        transform: translate(5%, 0);
+
+        &::after {
+            left: - calc($arrow-size / 2);
+        }
+    }
+}
+
+.timeLineContentRight {
+    @extend .timeLineContentLeft;
+    left: calc(50% + $timeline-icon-size);
+    transform: translate(5%, 0);
+
+    &::after {
+        left: - calc($arrow-size / 2);
+        transform: rotate(45deg);
+    }
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        width: calc(100% - $timeline-icon-size);
+        left: 5.6rem;
+
+        &::after {
+            left: - calc($arrow-size / 2);
+        }
+    }
+}
+
+.showTimeLineContent {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.timeLineContentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 1.6rem;
+}
+
+.timeLineContentImageContainer {
+    height: 5.2rem;
+    width: 5.2rem;
+    position: relative;
+
+    &>img {
+        border-radius: calc($border-radius / 2);
+    }
+}
+
+.highlightsList {
+    padding-left: $padding-16;
+    padding-right: $padding-16;
+
+    &>li {
+        margin-top: $margin-8;
+
+        &::marker {
+            color: var(--text-primary-color);
+        }
+    }
+}
+
+.companyUrl {
+    text-decoration: none;
+}

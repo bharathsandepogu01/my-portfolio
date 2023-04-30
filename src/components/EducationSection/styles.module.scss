@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+
+.educationMainContainer {
+    @include sectionContentContainer();
+    display: flex;
+    overflow: hidden;
+}
+
+.educationCard {
+    background-color: var(--background-color-dark);
+    border-radius: $border-radius;
+    padding: $padding-32;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.6rem;
+    transform: translate(0, -100%);
+    transition: 0.6s transform ease;
+    text-decoration: none;
+
+
+    @media screen and (max-width: $mobile-screen-max-width) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        padding: $padding-16 $padding-32;
+    }
+
+    @media screen and (max-width: $mobile-screen-max-width) {
+        padding: $padding-16;
+    }
+
+    .logoContainer {
+        padding: 0.4rem;
+        background-color: #fff;
+        border-radius: calc($border-radius/2);
+    }
+
+    .contentContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0.8rem
+    }
+}
+
+.showEducationCard {
+    transform: translate(0, 0);
+}

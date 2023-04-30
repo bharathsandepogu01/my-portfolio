@@ -1,0 +1,31 @@
+@import 'mixins';
+@import 'variables';
+
+.sectionContainer {
+    @include section();
+}
+
+.sectionHeader {
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+}
+
+.sectionLine {
+    height: 0.2rem;
+    background-color: var(--primary-color);
+    position: relative;
+    width: 0px;
+    transition: 1s width ease;
+
+    &::after {
+        content: '';
+        @include circle(0.8rem);
+        @include centerAbsoluteElement();
+        left: 100%;
+        background-color: var(--primary-color);
+    }
+}
+
+.expandSectionLine {
+    width: 100%;
+}

@@ -1,0 +1,20 @@
+@import 'variables';
+@import 'mixins';
+
+.headerContainer {
+    @include headerContentContainer();
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    transform: translate(0, 0);
+    transition: transform 0.2s ease-in-out 0.1s;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 1;
+
+}
+
+.hideHeaderContainer {
+    transform: translate(0, -100%);
+}

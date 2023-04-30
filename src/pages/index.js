@@ -1,7 +1,6 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Head from 'next/head';
+import AppLayout from '@components/AppLayout';
+import AppThemeProvider from '@components/AppThemeProvider';
 
 export default function Home() {
   return (
@@ -10,10 +9,11 @@ export default function Home() {
         <title>Bharath Sandepogu</title>
         <meta name="description" content="Bharath sandepogu's Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/app-favicon.ico" />
       </Head>
-      <main>
-        <h1>{`Bharath Sandepogu's Portfolio`}</h1>
-      </main>
+      <AppThemeProvider>
+        <AppLayout />
+      </AppThemeProvider>
     </>
   );
 }

@@ -1,0 +1,212 @@
+@import 'mixins';
+@import 'variables';
+
+.menuContainer {
+    height: 5.6rem;
+    width: auto;
+    border-radius: 1000px;
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    padding-left: 4.8rem;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        gap: 1.6rem;
+        padding-left: 3.2rem;
+    }
+}
+
+.linksContainer {
+    list-style: none;
+    visibility: hidden;
+
+    &>li {
+        visibility: hidden;
+        transform: translate(0, 100%);
+
+        &>a {
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        &:hover {
+            &>a>span {
+                color: var(--text-primary-color);
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile-menu-max-width) {
+        display: none;
+    }
+}
+
+.displayLinks {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4.8rem;
+    z-index: 2;
+
+    @media screen and (max-width: $tab-screen-max-width) {
+        gap: 3.2rem;
+    }
+
+    @for $i from 1 through 6 {
+        $delay: (7 - $i) * 0.06s;
+
+        &>li:nth-child(#{$i}) {
+            transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
+            transform: translate(0, 0);
+            visibility: visible
+        }
+    }
+}
+
+.commonHorizontalBar {
+    @include centerAbsoluteElement();
+    height: 3px;
+    background-color: var(--text-primary-color);
+    transition: transform 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger {
+    @include circle(5.6rem);
+    border: none;
+    background-color: unset;
+    padding: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+
+    &>span {
+        @extend .commonHorizontalBar;
+        width: 40%;
+    }
+
+    &>span::before {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-bottom: 0.8rem;
+    }
+
+    &>span::after {
+        content: '';
+        @extend .commonHorizontalBar;
+        width: 100%;
+        margin-top: 0.8rem;
+    }
+}
+
+.hamBurgerActive {
+    &>span {
+        background-color: transparent;
+    }
+
+    &>span::before {
+        transform: rotate(45deg);
+        margin-bottom: unset;
+    }
+
+    &>span::after {
+        transform: rotate(-45deg);
+        margin-top: unset;
+    }
+}
+
+.expandableBackground {
+    position: absolute;
+    right: 0;
+    height: 5.6rem;
+    width: 5.6rem;
+    border-radius: 1000px;
+    background-color: var(--background-color-dark);
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+.expandBackground {
+    width: 100%;
+}
+
+.mobileMenuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    padding: 1.2rem 2rem;
+    background-color: var(--background-color);
+}
+
+
+.cancelIcon {
+    cursor: pointer;
+    @include circle(5.6rem);
+    border: none;
+    margin-left: auto;
+    position: relative;
+    background-color: var(--background-color-dark);
+
+    &>span {
+        @extend .commonHorizontalBar;
+        width: 40%;
+        background-color: transparent;
+    }
+
+    &>span::before {
+        content: "";
+        @extend .commonHorizontalBar;
+        transform: rotate(45deg);
+        margin-bottom: 0.8;
+    }
+
+    &>span::after {
+        content: "";
+        @extend .commonHorizontalBar;
+        transform: rotate(-45deg);
+        margin-top: 0.8;
+    }
+}
+
+.mobileLinksContainer {
+    list-style: none;
+    width: 100%;
+    visibility: hidden;
+
+    &>li {
+        visibility: hidden;
+        width: 100%;
+        padding: 2.4rem;
+        transform: translate(-100%, 0);
+        border-bottom: 1px solid var(--border-color);
+
+        &>a {
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        &:hover {
+            &>a>span {
+                color: var(--text-primary-color);
+            }
+        }
+    }
+}
+
+.displayMobileLinks {
+    visibility: visible;
+
+    @for $i from 1 through 6 {
+        $delay: $i * 0.12s;
+
+        &>li:nth-child(#{$i}) {
+            transition: transform 0.2s ease $delay, visibility 0.2s ease $delay;
+            transform: translate(0, 0);
+            visibility: visible
+        }
+    }
+}
