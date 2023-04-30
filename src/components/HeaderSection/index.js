@@ -3,7 +3,7 @@ import Image from 'next/image';
 import AppText from '@components/AppText';
 import AppButton from '@components/AppButton';
 import ContactLogos from '@components/ContactLogos';
-import {HOME_SECTION} from '@constants/sections';
+import {CONTACT_SECTION, HOME_SECTION} from '@constants/sections';
 import classes from './styles.module.scss';
 
 function HeaderSection() {
@@ -44,14 +44,21 @@ function HeaderSection() {
           <ContactLogos />
         </div>
         <div className={classes.btnContainer}>
-          <AppButton
-            btnText="Contact Me"
-            primary
-            ariaLabel={'click to contact section'}
-          />
+          {/* TODO remove button inside anchor tag */}
+          <a
+            href={`#${CONTACT_SECTION}`}
+            aria-label={'click to go to contact section'}>
+            <AppButton btnText="Contact Me" primary aria-hidden />
+          </a>
           <AppButton
             btnText="See My Resume"
             secondary
+            onClick={() =>
+              window.open(
+                'https://drive.google.com/file/d/1b3qoReqsvd0VnZfVF4WTEMZbg7kuJkEo/view?usp=sharing',
+                '_blank',
+              )
+            }
             ariaLabel={`click to see Bharath Sandepogu's Resume`}
           />
         </div>

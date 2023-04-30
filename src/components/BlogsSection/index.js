@@ -89,7 +89,8 @@ function BlogsSection() {
                 target={'_blank'}
                 className={classes.blog}
                 key={blog.id}
-                ref={el => (blogRefs.current[blog.id] = el)}>
+                ref={el => (blogRefs.current[blog.id] = el)}
+                aria-label={`click to open ${blog.header} written by Bharath Sandepogu`}>
                 <div className={classes.tags}>
                   {blog.tags.map(tag => {
                     return (
