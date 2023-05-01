@@ -47,34 +47,35 @@ function EducationSection() {
       <div className={classes.educationMainContainer}>
         {educations.map(education => {
           return (
-            <a
-              href={education.url}
+            <div
               className={classes.educationCard}
               key={education.id}
-              target={'_blank'}
+              aria-hidden
               ref={el => (educationRefs.current[education.id] = el)}>
-              <div className={classes.logoContainer}>
-                <Image
-                  alt={education.name}
-                  src={education.logoURL}
-                  height={75}
-                  width={75}
-                  loading={'lazy'}
-                  className={classes.logo}
-                />
-              </div>
-              <div className={classes.contentContainer}>
-                <AppText variant="h3" semiBold>
-                  {education.name}
-                </AppText>
-                <AppText variant="p" small>
-                  {education.course}
-                </AppText>
-                <AppText variant="p" extraSmall secondaryText>
-                  {education.date}
-                </AppText>
-              </div>
-            </a>
+              <a href={education.url} target={'_blank'}>
+                <div className={classes.logoContainer}>
+                  <Image
+                    alt={education.name}
+                    src={education.logoURL}
+                    height={75}
+                    width={75}
+                    loading={'lazy'}
+                    className={classes.logo}
+                  />
+                </div>
+                <div className={classes.contentContainer}>
+                  <AppText variant="h3" semiBold>
+                    {education.name}
+                  </AppText>
+                  <AppText variant="p" small>
+                    {education.course}
+                  </AppText>
+                  <AppText variant="p" extraSmall secondaryText>
+                    {education.date}
+                  </AppText>
+                </div>
+              </a>
+            </div>
           );
         })}
       </div>

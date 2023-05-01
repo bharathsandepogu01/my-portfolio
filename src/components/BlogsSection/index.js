@@ -40,10 +40,10 @@ function BlogsSection() {
       const obsOptions = {root: null, threshold: 0};
       const obsCallback = function (entries, object) {
         const [entry] = entries;
-        if (entry.isIntersecting) {
-          blogRef.classList.add(classes.showBlog);
-        } else {
+        if (!entry.isIntersecting) {
           blogRef.classList.remove(classes.showBlog);
+        } else {
+          blogRef.classList.add(classes.showBlog);
         }
       };
       const observer = new IntersectionObserver(obsCallback, obsOptions);
@@ -84,35 +84,38 @@ function BlogsSection() {
         <div className={classes.blogsContainer}>
           {blogs.map(blog => {
             return (
-              <a
-                href={blog.link}
-                target={'_blank'}
+              <div
                 className={classes.blog}
                 key={blog.id}
-                ref={el => (blogRefs.current[blog.id] = el)}
-                aria-label={`click to open ${blog.header} written by Bharath Sandepogu`}>
-                <div className={classes.tags}>
-                  {blog.tags.map(tag => {
-                    return (
-                      <AppText variant="p" extraSmall key={tag}>
-                        {tag}
-                      </AppText>
-                    );
-                  })}
-                </div>
-                <AppText variant="h3" semiBold>
-                  {blog.header}
-                </AppText>
-                <AppText variant="p" small secondaryText>
-                  {blog.desc}
-                </AppText>
-                <div className={classes.dateContainer}>
-                  <CalendarIcon />
-                  <AppText variant="span" extraSmall secondaryText>
-                    {blog.date}
+                aria-hidden
+                ref={el => (blogRefs.current[blog.id] = el)}>
+                <a
+                  href={blog.link}
+                  target={'_blank'}
+                  aria-label={`click to open ${blog.header} written by Bharath Sandepogu`}>
+                  <div className={classes.tags}>
+                    {blog.tags.map(tag => {
+                      return (
+                        <AppText variant="p" extraSmall key={tag}>
+                          {tag}
+                        </AppText>
+                      );
+                    })}
+                  </div>
+                  <AppText variant="h3" semiBold>
+                    {blog.header}
                   </AppText>
-                </div>
-              </a>
+                  <AppText variant="p" small secondaryText>
+                    {blog.desc}
+                  </AppText>
+                  <div className={classes.dateContainer}>
+                    <CalendarIcon />
+                    <AppText variant="span" extraSmall secondaryText>
+                      {blog.date}
+                    </AppText>
+                  </div>
+                </a>
+              </div>
             );
           })}
         </div>
