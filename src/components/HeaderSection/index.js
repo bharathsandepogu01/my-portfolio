@@ -25,19 +25,19 @@ function HeaderSection() {
       id={HOME_SECTION}
       aria-label={HOME_SECTION}>
       <div className={classes.contentContainer} ref={contentRef}>
-        <AppText variant="p" extraMedium semiBold>
+        <AppText variant="p" medium semiBold>
           Hello, I am
         </AppText>
         <AppText variant="h1" extraLarge primaryColor bold>
           Bharath Sandepogu
         </AppText>
-        <AppText variant="p" secondaryText medium>
+        <AppText variant="p" secondaryText>
           As a passionate Full Stack Software Developer, I've honed my skills in
           building Web and Mobile applications using JavaScript, ReactJS,
           NodeJS, React Native, and a host of other cool libraries and
           frameworks.
         </AppText>
-        <AppText variant="p" secondaryText medium>
+        <AppText variant="p" secondaryText>
           Always a JavaScript Enthusiast...🤩
         </AppText>
         <div className={classes.contactLogos}>
