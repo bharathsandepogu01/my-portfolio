@@ -11,7 +11,7 @@ function Header() {
   useEffect(() => {
     const scrollHandler = e => {
       const currScrollY = window.scrollY;
-      if (currScrollY > prevScrollY.current) {
+      if (currScrollY > prevScrollY.current && currScrollY > 100) {
         headerRef.current.classList.add(classes.hideHeaderContainer);
       } else {
         headerRef.current.classList.remove(classes.hideHeaderContainer);
